@@ -28,7 +28,33 @@ https://github.com/gilbertkibet/PizzaMtaaniAPI.git
 
 ## Usage
 
-you can test the action method by passing the pizza size and charges
+you can test the action method by passing the pizza size and charges using the following json payload
+
+
+[
+  {
+    "size": "Large",
+    "toppings": [
+      "Pepperoni",
+       "Cheese"
+    ]
+  },
+{
+    "size": "Medium",
+    "toppings": [
+      "Pepperoni",
+       "Cheese"
+    ]
+  },
+
+{
+    "size": "Small",
+    "toppings": [
+      "Pepperoni",
+       "Cheese"
+    ]
+  }
+]
 
 
 
