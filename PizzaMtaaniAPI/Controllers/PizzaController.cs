@@ -18,6 +18,7 @@ namespace PizzaMtaani.API.Controllers
         { "Medium", 1400.00m },
         { "Large", 1600.00m }
     };
+
         private readonly Dictionary<string, decimal> _basicToppingPrices = new Dictionary<string, decimal>
     {
         { "Cheese", 50.00m },
@@ -39,7 +40,7 @@ namespace PizzaMtaani.API.Controllers
             _logger = logger;
         }
 
-        [HttpPost]
+        [HttpPost("order-pizza")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult PlacePizzaOrder(List<PizzaOrder> orders)
@@ -97,7 +98,6 @@ namespace PizzaMtaani.API.Controllers
                 output.AppendLine($"SUB-TOTAL: KES {subTotal:F2}");
                 output.AppendLine($"VAT: KES {vat:F2}");
                 output.AppendLine($"TOTAL: KES {total:F2}");
-                
    
                 return Ok(output.ToString());
                 
