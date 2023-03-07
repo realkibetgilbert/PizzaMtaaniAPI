@@ -47,7 +47,7 @@ namespace PizzaMtaani.API.Controllers
         {
             _logger.LogError(JsonConvert.SerializeObject(orders));
 
-            if(orders is null)
+            if(!ModelState.IsValid)
             {
                 return StatusCode(400);
             }
