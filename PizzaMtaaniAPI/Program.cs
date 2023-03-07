@@ -1,6 +1,9 @@
 using Serilog.Events;
 using Serilog;
 using Microsoft.OpenApi.Models;
+using PizzaMtaani.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,8 +21,13 @@ builder.Host.UseSerilog();
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddDbContext<PizzaApiContext>(options =>
+options.UseInMemoryDatabase("MoviesDb"));
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
