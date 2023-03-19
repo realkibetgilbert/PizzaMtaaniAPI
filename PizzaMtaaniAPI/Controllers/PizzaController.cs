@@ -21,7 +21,7 @@ namespace PizzaMtaani.API.Controllers
             _pizzaOrderService = pizzaOrderService;
         }
 
-        [HttpPost("order-pizza")]
+        [HttpPost("pizza-order")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]

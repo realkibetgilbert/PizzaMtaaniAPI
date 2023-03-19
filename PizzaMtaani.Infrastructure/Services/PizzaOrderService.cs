@@ -87,11 +87,14 @@ namespace PizzaMtaani.Infrastructure.Services
                     }
 
                     var totalPrice = sizePrice + basicToppingPrice + deluxeToppingPrice;
+
                     subTotal += totalPrice;
+
                     output.AppendLine($"1 {order.Size}, {order.Toppings.Count} Topping Pizza - {string.Join(", ", order.Toppings)}: KES {totalPrice:F2}");
                 }
 
                 var vat = Math.Ceiling(subTotal * 0.16m);
+
                 var total = subTotal + vat;
 
                 output.AppendLine($"SUB-TOTAL: KES {subTotal:F2}");
@@ -99,8 +102,6 @@ namespace PizzaMtaani.Infrastructure.Services
                 output.AppendLine($"TOTAL: KES {total:F2}");
 
                 return output.ToString();
-
-
 
             }
             catch (Exception ex)
