@@ -13,6 +13,6 @@ namespace PizzaMtaani.Infrastructure
         public PizzaApiContext(DbContextOptions<PizzaApiContext> options):base(options)
         {
         }
-        public DbSet<PizzaOrder> PizzaOrders { get; set; }
+        public DbSet<PizzaOrder> tblPizzaOrders { get; set; }
     }
 }
